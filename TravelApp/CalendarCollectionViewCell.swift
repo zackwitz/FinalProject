@@ -14,9 +14,9 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     var dayNumberLabel: UILabel!
     
     override init(frame: CGRect) {
-        print("2")
         super.init(frame: frame)
         contentView.backgroundColor = .red
+        print("2")
         
         dayNumberLabel = UILabel()
         dayNumberLabel.textColor = .green
