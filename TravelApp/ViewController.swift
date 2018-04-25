@@ -10,13 +10,13 @@ import UIKit
 import SnapKit
 let lightPink = UIColor(red: 249/255, green: 32/255, blue: 166/255, alpha: 1)
 let lightOrange = UIColor(red: 255/255, green: 136/255, blue: 15/255, alpha: 1)
-//new line
+
 
 
 class ViewController: UIViewController {
     
     var welcomeLabel: UILabel!
-    
+    var calendarButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,18 +30,36 @@ class ViewController: UIViewController {
         welcomeLabel.font = UIFont.systemFont(ofSize: 36)
         welcomeLabel.textAlignment = .center
         
+        calendarButton = UIButton(type: .system)
+        calendarButton.setTitle("Calendar", for: .normal)
+        calendarButton.setTitleColor(lightPink, for: .normal)
+        calendarButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        calendarButton.addTarget(self, action: #selector(calendarButtonPressed), for: .touchUpInside)
+        
         
         view.addSubview(welcomeLabel)
+        view.addSubview(calendarButton)
+        
         setupConstraints()
     }
 
     func setupConstraints() {
         welcomeLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+            make.bottom.equalTo(view.snp.centerY).offset(-24)
             make.leading.equalToSuperview().offset(100)
             make.trailing.equalToSuperview().offset(-100)
         }
+        
+        calendarButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(welcomeLabel.snp.bottom).offset(24)
+        }
+        
+    }
+    
+    @objc func calendarButtonPressed() {
+        navigationController?.pushViewController(CalendarViewController(), animated: true)
     }
 
 
