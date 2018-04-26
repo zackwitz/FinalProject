@@ -52,33 +52,10 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
         return CGSize(width: 40, height: 30)
     }
     
-
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = daysCV.dequeueReusableCell(withReuseIdentifier: calendarCellReuseIdentifier, for: indexPath) as! CalendarCollectionViewCell
-//        cell.backgroundColor = .red
-//        cell.dayNumberLabel.text = String(indexPath.item)
-//        print("1")
-//       // cell.dayNumberLabel.text = "\(indexPath.item)"
-//
-//
-//        cell.setNeedsUpdateConstraints()
-//        return cell
-//
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 31
-//    }
-//
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-//
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        return CGSize(width: view.frame.width / 6, height: 30)
-//
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let dayVC = DayViewController()
+        present(dayVC, animated: true, completion: nil)
+    }
+    
     
 }

@@ -16,10 +16,12 @@ class DayViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        view.backgroundColor = .blue
+        
+        title = "Date"
         hoursTV = UITableView()
     
-        
+        view.addSubview(hoursTV)
         setupConstraints()
     }
     
@@ -39,21 +41,36 @@ class DayViewController: UIViewController, UITableViewDataSource, UITableViewDel
         return tv
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Date"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 24
     }
-    */
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "hourCell") as! HourTableViewCell
+
+        
+        cell.dateLabel.text = String((indexPath.item % 12) + 12)
+        
+        cell.setNeedsUpdateConstraints()
+        
+        return cell
+    }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        printSongs()
+//        let songVC = SongViewController()
+//        self.songDelegate = songVC
+//        navigationController?.pushViewController(songVC, animated: true)
+//        songDelegate?.updateTextFields(songs: songs, number: indexPath.row)r
+//    }
 
 }
