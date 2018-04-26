@@ -54,7 +54,7 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let dayVC = DayViewController()
-        present(dayVC, animated: true, completion: nil)
+        navigationController?.pushViewController(DayViewController(), animated: true)
     }
     
     

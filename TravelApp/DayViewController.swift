@@ -16,20 +16,29 @@ class DayViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
         
-        title = "Date"
-        hoursTV = UITableView()
-    
+        let navControl = navigationController
+        let navBar = navControl?.navigationBar
+        navBar?.isTranslucent = false
+        let addButton: UIBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addPressed))
+        self.navigationItem.rightBarButtonItem = addButton
+        
+        hoursTV = createTableView()
+        
         view.addSubview(hoursTV)
         setupConstraints()
     }
     
     func setupConstraints() {
         hoursTV.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(80)
+            make.top.equalToSuperview()
             make.leading.trailing.bottom.equalToSuperview()
         }
+    }
+    
+    @objc func addPressed() {
+        
     }
     
     func createTableView() -> UITableView {
@@ -48,7 +57,7 @@ class DayViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 24
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
     }
@@ -56,8 +65,17 @@ class DayViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hourCell") as! HourTableViewCell
 
+        var ampm: String
+        var hour = indexPath.row
+        if hour < 12 {
+            ampm = " am"
+        } else {
+            ampm = " pm"
+        }
+        hour = hour % 12
+        if hour == 0 {hour = hour + 12}
         
-        cell.dateLabel.text = String((indexPath.item % 12) + 12)
+        cell.dateLabel.text = String(hour) + ampm
         
         cell.setNeedsUpdateConstraints()
         

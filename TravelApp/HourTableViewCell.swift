@@ -15,10 +15,10 @@ class HourTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .red
+        contentView.backgroundColor = .white
         
         dateLabel = UILabel()
-        dateLabel.font = UIFont.systemFont(ofSize: 32)
+        dateLabel.font = UIFont.systemFont(ofSize: 14)
         contentView.addSubview(dateLabel)
     }
     
@@ -27,6 +27,7 @@ class HourTableViewCell: UITableViewCell {
             make.top.equalToSuperview().offset(4)
             make.leading.equalToSuperview().offset(4)
         }
+        super.updateConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
