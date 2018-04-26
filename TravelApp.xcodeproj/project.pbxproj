@@ -10,6 +10,8 @@
 		2976822A012003BB37FB0F2F /* Pods_TravelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6113D7BB5C0C29B62E353CFA /* Pods_TravelApp.framework */; };
 		B61C3958208FFFCF00381D2B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C3957208FFFCF00381D2B /* CalendarViewController.swift */; };
 		B61C395A2090021C00381D2B /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C39592090021C00381D2B /* CalendarCollectionViewCell.swift */; };
+		B6B01D822091567A0059EE01 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B01D812091567A0059EE01 /* DayViewController.swift */; };
+		B6B01D84209157C60059EE01 /* HourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B01D83209157C60059EE01 /* HourTableViewCell.swift */; };
 		B6B67C64208ED63B00D54151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B67C63208ED63B00D54151 /* AppDelegate.swift */; };
 		B6B67C66208ED63B00D54151 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B67C65208ED63B00D54151 /* ViewController.swift */; };
 		B6B67C6C208ED63B00D54151 /* TravelApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6B67C6A208ED63B00D54151 /* TravelApp.xcdatamodeld */; };
@@ -23,6 +25,8 @@
 		80878100AF15EEFC71A9A06D /* Pods-TravelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelApp/Pods-TravelApp.release.xcconfig"; sourceTree = "<group>"; };
 		B61C3957208FFFCF00381D2B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		B61C39592090021C00381D2B /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6B01D812091567A0059EE01 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
+		B6B01D83209157C60059EE01 /* HourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourTableViewCell.swift; sourceTree = "<group>"; };
 		B6B67C60208ED63B00D54151 /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B67C63208ED63B00D54151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B67C65208ED63B00D54151 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 				B6B67C65208ED63B00D54151 /* ViewController.swift */,
 				B61C3957208FFFCF00381D2B /* CalendarViewController.swift */,
 				B61C39592090021C00381D2B /* CalendarCollectionViewCell.swift */,
+				B6B01D812091567A0059EE01 /* DayViewController.swift */,
+				B6B01D83209157C60059EE01 /* HourTableViewCell.swift */,
 				B6B67C6D208ED63D00D54151 /* Assets.xcassets */,
 				B6B67C6F208ED63D00D54151 /* LaunchScreen.storyboard */,
 				B6B67C72208ED63D00D54151 /* Info.plist */,
@@ -210,6 +216,8 @@
 				B6B67C64208ED63B00D54151 /* AppDelegate.swift in Sources */,
 				B6B67C6C208ED63B00D54151 /* TravelApp.xcdatamodeld in Sources */,
 				B61C395A2090021C00381D2B /* CalendarCollectionViewCell.swift in Sources */,
+				B6B01D84209157C60059EE01 /* HourTableViewCell.swift in Sources */,
+				B6B01D822091567A0059EE01 /* DayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

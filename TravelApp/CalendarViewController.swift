@@ -16,14 +16,12 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = lightPink
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 4, left: 0, bottom: 12, right: 0)
-        daysCV = UICollectionView(frame: CGRect(x: 10, y: 75, width: view.frame.width - 20, height: view.frame.height - 150), collectionViewLayout: layout)
-        daysCV.backgroundColor = .blue
+        daysCV = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+        daysCV.backgroundColor = .white
         daysCV.dataSource = self
         daysCV.delegate = self
         daysCV.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: calendarCellReuseIdentifier)
@@ -38,7 +36,6 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
         
         cell.dayNumberLabel.text = String(indexPath.item + 1)
         
-        cell.backgroundColor = .gray
         cell.setNeedsUpdateConstraints()
         return cell
     }

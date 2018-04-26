@@ -15,11 +15,10 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .red
+        contentView.backgroundColor = .white
         print("2")
         
-        dayNumberLabel = UILabel()
-        dayNumberLabel.textColor = .green
+        dayNumberLabel = UILabel() 
         
         contentView.addSubview(dayNumberLabel)
     }
