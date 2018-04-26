@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = lightOrange
+        title = "Welcome"
         
         welcomeLabel = UILabel()
         welcomeLabel.text = "Welcome to TravelApp!"
@@ -47,13 +48,13 @@ class ViewController: UIViewController {
         welcomeLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(view.snp.centerY).offset(-24)
-            make.leading.equalToSuperview().offset(100)
-            make.trailing.equalToSuperview().offset(-100)
+            make.leading.equalToSuperview().offset(80)
+            make.trailing.equalToSuperview().offset(-80)
         }
         
         calendarButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(welcomeLabel.snp.bottom).offset(24)
+            make.bottom.equalToSuperview().offset(-80)
         }
         
     }

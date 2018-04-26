@@ -17,6 +17,8 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Calendar"
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 4, left: 0, bottom: 12, right: 0)

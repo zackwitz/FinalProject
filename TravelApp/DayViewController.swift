@@ -17,10 +17,11 @@ class DayViewController: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        title = "Date"
         
         let navControl = navigationController
         let navBar = navControl?.navigationBar
-        navBar?.isTranslucent = false
+        navBar?.isTranslucent = true
         let addButton: UIBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addPressed))
         self.navigationItem.rightBarButtonItem = addButton
         
