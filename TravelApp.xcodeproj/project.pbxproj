@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2976822A012003BB37FB0F2F /* Pods_TravelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6113D7BB5C0C29B62E353CFA /* Pods_TravelApp.framework */; };
 		B61018272094382400885D26 /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61018262094382400885D26 /* NewTripViewController.swift */; };
+		B61018292095733B00885D26 /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61018282095733B00885D26 /* HeaderReusableView.swift */; };
 		B61C3958208FFFCF00381D2B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C3957208FFFCF00381D2B /* CalendarViewController.swift */; };
 		B61C395A2090021C00381D2B /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C39592090021C00381D2B /* CalendarCollectionViewCell.swift */; };
 		B6B01D822091567A0059EE01 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B01D812091567A0059EE01 /* DayViewController.swift */; };
@@ -28,6 +29,7 @@
 		6113D7BB5C0C29B62E353CFA /* Pods_TravelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80878100AF15EEFC71A9A06D /* Pods-TravelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelApp/Pods-TravelApp.release.xcconfig"; sourceTree = "<group>"; };
 		B61018262094382400885D26 /* NewTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
+		B61018282095733B00885D26 /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
 		B61C3957208FFFCF00381D2B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		B61C39592090021C00381D2B /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		B6B01D812091567A0059EE01 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				B6DF46C02091A04200ED5E4F /* TripsCollectionViewCell.swift */,
 				B6DF46BE20919F3300ED5E4F /* Trip.swift */,
 				B61C3957208FFFCF00381D2B /* CalendarViewController.swift */,
+				B61018282095733B00885D26 /* HeaderReusableView.swift */,
 				B61C39592090021C00381D2B /* CalendarCollectionViewCell.swift */,
 				B6B01D812091567A0059EE01 /* DayViewController.swift */,
 				B6B01D83209157C60059EE01 /* HourTableViewCell.swift */,
@@ -225,6 +228,7 @@
 			files = (
 				B61C3958208FFFCF00381D2B /* CalendarViewController.swift in Sources */,
 				B6B67C66208ED63B00D54151 /* ViewController.swift in Sources */,
+				B61018292095733B00885D26 /* HeaderReusableView.swift in Sources */,
 				B6B67C64208ED63B00D54151 /* AppDelegate.swift in Sources */,
 				B6DF46C12091A04200ED5E4F /* TripsCollectionViewCell.swift in Sources */,
 				B61018272094382400885D26 /* NewTripViewController.swift in Sources */,
