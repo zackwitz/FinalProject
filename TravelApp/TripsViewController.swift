@@ -10,18 +10,26 @@ import UIKit
 import SnapKit
 
 let backgroundGray = UIColor(red: 228/255, green: 228/255, blue: 228/255, alpha: 1)
-let trips = [Trip(startLocation: "SF", endLocation: "NY", startDate: "5/1/18", endDate: "5/5/18", hotel: "Ritz"),
+var trips = [Trip(startLocation: "SF", endLocation: "NY", startDate: "5/1/18", endDate: "5/5/18", hotel: "Ritz"),
             Trip(startLocation: "LA", endLocation: "BOS", startDate: "6/3/18", endDate: "6/8/18", hotel: "Motel 6")]
 
 
-class TripsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class TripsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, TripDelegate {
+    
+    
 
     var collectionView: UICollectionView!
+    var tripDelegate: TripDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+        title = "My Trips"
+        
+        let navBar = navigationController?.navigationBar
+        var addButton: UIBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addPressed))
+        self.navigationItem.rightBarButtonItem = addButton
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -31,8 +39,19 @@ class TripsViewController: UIViewController, UICollectionViewDataSource, UIColle
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(TripsCollectionViewCell.self, forCellWithReuseIdentifier: "tripCell")
-
+        print(trips.count)
+        
         view.addSubview(collectionView)
+    }
+
+    func loadTrip(trip: Trip) {
+        trips.append(trip)
+        collectionView?.reloadData() //why is collectionview nil????
+        printTripArray(trips: trips)
+    }
+    
+    @objc func addPressed() {
+        navigationController?.pushViewController(NewTripViewController(), animated: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -45,6 +64,7 @@ class TripsViewController: UIViewController, UICollectionViewDataSource, UIColle
         cell.sdLabel.text = cell.sdLabel.text! + trip.startDate
         cell.edLabel.text = cell.edLabel.text! + trip.endDate
         cell.hLabel.text = cell.hLabel.text! + trip.hotel
+        
         
         cell.setNeedsUpdateConstraints()
         return cell
@@ -62,11 +82,18 @@ class TripsViewController: UIViewController, UICollectionViewDataSource, UIColle
         return CGSize(width: view.frame.width, height: 164)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let dayVC = DayViewController()
-//        navigationController?.pushViewController(DayViewController(), animated: true)
-//    }
+
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.reloadData()
+        
+    }
+    
+    func printTripArray(trips: [Trip]) {
+        for t in trips {
+            print("sl: \(t.startLocation), el: \(t.endLocation)")
+        }
+    }
     
 
 }
